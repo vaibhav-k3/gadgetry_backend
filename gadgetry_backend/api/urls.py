@@ -1,8 +1,7 @@
 from django.urls import path
 
-from .views import createuserView ,getallusers, getUser
+from .views import getUser,createOrListuserView
 urlpatterns = [
-    path('createUser',createuserView),
-    path('getAllUsers',getallusers),
+    path('ListCreateUser',createOrListuserView),
     path('getUser/<str:pk>',getUser)
 ]
