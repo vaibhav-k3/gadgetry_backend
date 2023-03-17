@@ -15,13 +15,13 @@ class Product(models.Model):
     productDateAdded = models.DateField()
     productDimensions = models.CharField(max_length= 20)
     productImageUrl = models.TextField()
-    Username = models.ForeignKey('User',on_delete=models.CASCADE)
+    Username = models.ForeignKey(to=User,related_name='users',on_delete=models.CASCADE)
 
 
 class Review(models.Model):
     ReviewId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    productName = models.ForeignKey('Product',on_delete=models.CASCADE)
-    username = models.ForeignKey('User',on_delete=models.CASCADE)
+    productName = models.ForeignKey(to=Product,related_name='product_reviews',on_delete=models.CASCADE)
+    username = models.ForeignKey(to = User,related_name='user',on_delete=models.CASCADE)
     reviewText = models.TextField()
     reviewDate = models.DateTimeField()
     reviewRating = models.IntegerField()
