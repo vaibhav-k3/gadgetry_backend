@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views.user_management_views import getUser,createOrListuserView
+from .views.user_management_views import getUser,createOrListuserView, verifyUser
 from .views.product_views import getAllProductsOrCreate, retriveProduct
 from .views.review_views import createReview , listReviewOnfilter
 
@@ -11,5 +11,6 @@ urlpatterns = [
     path('getProduct/<str:productName>',retriveProduct),
     path('ListCreateProduct/',getAllProductsOrCreate),
     path('createReview/',createReview),
-    path('listReview/',listReviewOnfilter)
+    path('listReview/',listReviewOnfilter),
+    path('verifyUser/',verifyUser)
 ]
