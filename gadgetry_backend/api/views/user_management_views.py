@@ -11,11 +11,6 @@ class ListCreateUserView(ListCreateAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
 
-# class GetAllUsersView(ListAPIView):
-#     serializer_class = UserSerializer
-#     queryset = User.objects.all()
-
-
 class GetUserDetailView(RetrieveAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
