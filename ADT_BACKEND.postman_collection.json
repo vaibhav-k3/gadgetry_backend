@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "4a5fecd0-b185-4076-9f95-4eb5e1839dd5",
+		"name": "ADT_BACKEND",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/ListCreateUser",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ListCreateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"testuser3\",\r\n    \"userPassword\":\"testPassword\",\r\n    \"User\":\"User\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/ListCreateUser",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ListCreateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/ListCreateProduct",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ListCreateProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Prouduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"TestProduct\",\r\n    \"productBrand\": \"A New brand\",\r\n    \"productDateAdded\": \"2023-01-01\",\r\n    \"productDimensions\": \"12X12X12\",\r\n    \"productImageUrl\": \"testURL\",\r\n    \"Username\": \"testUser1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/ListCreateProduct",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ListCreateProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reviewText\": \"A review\",\r\n    \"reviewDate\": \"2023-01-01\",\r\n    \"reviewRating\": 4,\r\n    \"productName\": \"TestProduct1\",\r\n    \"username\": \"Testuser1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/createReview",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"createReview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product and all reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/getProduct/Corsair%20CMSA8GX3M2A1066C7%20Apple%208%20GB%20Dual%20Channel%20Kit%20DDR3%201066%20%28PC3%208500%29%20204-Pin%20DDR3%20Laptop%20SO-DIMM%20Memory%201.5V",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getProduct",
+						"Corsair%20CMSA8GX3M2A1066C7%20Apple%208%20GB%20Dual%20Channel%20Kit%20DDR3%201066%20%28PC3%208500%29%20204-Pin%20DDR3%20Laptop%20SO-DIMM%20Memory%201.5V"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get brand Stats",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userName",
+							"value": "TestUser1",
+							"type": "default"
+						},
+						{
+							"key": "userPassword",
+							"value": "Testpassword",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/verifyUser",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"verifyUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

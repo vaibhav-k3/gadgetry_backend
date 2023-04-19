@@ -9,9 +9,9 @@ urlpatterns = [
     path('ListCreateUser',createOrListuserView),
     path('getUser/<str:pk>',getUser),
     path('getProduct/<str:productName>',retriveProduct),
-    path('ListCreateProduct/',getAllProductsOrCreate),
-    path('createReview/',createReview),
-    path('listReview/',listReviewOnfilter),
-    path('verifyUser/',verifyUser),
-    path('brandchart/',brand_chart_view)
+    path('ListCreateProduct',getAllProductsOrCreate),
+    path('createReview',createReview),
+    path('listReview',listReviewOnfilter),
+    path('verifyUser',verifyUser),
+    path('brandchart',brand_chart_view)
 ]
