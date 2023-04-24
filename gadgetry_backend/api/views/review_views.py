@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView, ListAPIView , DestroyAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView , DestroyAPIView, UpdateAPIView
 
 from ..Serializers import ReviewSerializer
 from ..models import Review
@@ -24,6 +24,13 @@ class DeleteReviewView(DestroyAPIView):
     serializer_class = ReviewSerializer
     lookup_field = 'ReviewId'
 
+class UpdateReviewView(UpdateAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    lookup_field = 'ReviewId'
+
+
+updateReview = UpdateReviewView.as_view()
 deleteReview = DeleteReviewView.as_view()
 createReview = CreateReviewView.as_view()
 listReviewOnfilter = ListReviewView.as_view()
