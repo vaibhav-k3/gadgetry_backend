@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView , DestroyAPIView
 
 from ..Serializers import ReviewSerializer
 from ..models import Review
@@ -19,6 +19,11 @@ class ListReviewView(ListAPIView):
         maxRating = int(self.request.query_params.get('maxRating','5'))
         return Review.objects.filter(reviewRating__gte = minRating, reviewRating__lte = maxRating )
 
+class DeleteReviewView(DestroyAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    lookup_field = 'ReviewId'
 
+deleteReview = DeleteReviewView.as_view()
 createReview = CreateReviewView.as_view()
 listReviewOnfilter = ListReviewView.as_view()

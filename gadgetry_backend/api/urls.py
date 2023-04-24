@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views.user_management_views import getUser,createOrListuserView, verifyUser
 from .views.product_views import getAllProductsOrCreate, retriveProduct
-from .views.review_views import createReview , listReviewOnfilter
+from .views.review_views import deleteReview, createReview , listReviewOnfilter
 from .views.chart_views import brand_chart_view
 # Add DRF router later
 urlpatterns = [
@@ -13,5 +13,6 @@ urlpatterns = [
     path('createReview',createReview),
     path('listReview',listReviewOnfilter),
     path('verifyUser',verifyUser),
-    path('brandchart',brand_chart_view)
+    path('brandchart',brand_chart_view),
+    path('deleteReview/<str:ReviewId>',deleteReview)
 ]
