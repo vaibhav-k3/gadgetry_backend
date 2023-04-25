@@ -25,3 +25,4 @@ class Review(models.Model):
     reviewText = models.TextField()
     reviewDate = models.DateTimeField()
     reviewRating = models.IntegerField()
+    reviewTitle = models.TextField()
