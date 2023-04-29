@@ -29,3 +29,9 @@ class ProductReviewSerializer(serializers.ModelSerializer):
 class BrandRatingSerializer(serializers.Serializer):
     review_count = serializers.IntegerField()
     reviewRating = serializers.IntegerField()
+
+class ProductBrandSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = ['productBrand']
