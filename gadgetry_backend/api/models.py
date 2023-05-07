@@ -10,10 +10,10 @@ class User(models.Model):
 
 
 class Product(models.Model):
-    productName = models.CharField(max_length=100, primary_key=True)
-    productBrand = models.CharField(max_length= 30)
+    productName = models.CharField(max_length=200, primary_key=True)
+    productBrand = models.CharField(max_length= 100)
     productDateAdded = models.DateField()
-    productDimensions = models.CharField(max_length= 20)
+    productDimensions = models.CharField(max_length= 50)
     productImageUrl = models.TextField()
     Username = models.ForeignKey(to=User,related_name='users',on_delete=models.CASCADE)
 
